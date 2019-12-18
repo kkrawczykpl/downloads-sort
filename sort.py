@@ -3,10 +3,8 @@ import os
 
 def main():
     folder_to_sort = input("Sort files in folder (path): ")
-    change_location = input("Change files location? (True or False):")
+    change_location = input("Change files location? (True or False): ")
 
-    # while change_location!= "true" or "false":
-    #     change_location = input("Change files location? (True or False):")
     if change_location == "True":
         folder_destination = input("Location (path): ")
     else:
@@ -25,16 +23,22 @@ def sort(folder_to_sort, folder_destination):
 
 
 def choose_subfolder(filename):
-    if filename.lower().endswith('.mp3'):
+    if filename.lower().endswith(('.mp3', '.wav', '.aac', '.wma', '.flac', '.ogg', '.alac')):
         return 'Music'
-    elif filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
+    elif filename.lower().endswith(('.avi', '.mov', '.mkv', '.mp4', '.flv', '.wmv')):
+        return 'Videos'
+    elif filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp', '.svg')):
         return 'Images'
-    elif filename.lower().endswith(('.psd', '.ai')):
+    elif filename.lower().endswith(('.psd', '.ai', '.eps')):
         return 'Graphic Projects'
     elif filename.lower().endswith(('.pdf', '.doc', '.docx', '.odt', '.ppt', '.pptx')):
         return 'Documents'
     elif filename.lower().endswith(('.html', '.css', '.js')):
         return 'Web Development'
+    elif filename.lower().endswith(('.zip', '.rar')):
+        return 'Archives'
+    elif filename.lower().endswith(('.csv', '.xlm', '.ods', '.ots', '.tsv', '.xls', '.xlsb', '.xlsm', '.xlsx', '.xlt')):
+        return 'Spreadsheets'
     else:
         return ''
 
