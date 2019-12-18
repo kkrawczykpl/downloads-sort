@@ -37,6 +37,8 @@ def choose_subfolder(filename):
         return 'Web Development'
     elif filename.lower().endswith(('.zip', '.rar')):
         return 'Archives'
+    elif filename.lower().endswith('.txt'):
+        return 'Texts'
     elif filename.lower().endswith(('.csv', '.xlm', '.ods', '.ots', '.tsv', '.xls', '.xlsb', '.xlsm', '.xlsx', '.xlt')):
         return 'Spreadsheets'
     else:
